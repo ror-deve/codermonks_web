@@ -1,0 +1,72 @@
+<section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <h6>Ready to elevate your business with technology? Reach out to us and let's start the conversation.</h6>
+          <p>At CoderMonks IT Solutions, we are dedicated to delivering innovative IT solutions tailored to your business needs.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box" data-aos="fade-up">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>Pramukh Plaza 3 rd Floor , </br>
+                  Plot No 9 Scheme No 53 </br>
+                  Vijay Nagar Near Apollo premier Building. </br>
+                  535022 Indore</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>anjanasharmabsl@gmail.com<br>codermonksinfotech@gmail.com</p>
+                </div>
+              </div>  
+              <div class="col-md-6">
+                <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <%= form_with(model: @contact, url: contacts_path, method: 'post', role: 'form', class: 'php-email-form w-100', 'data-aos' => 'fade-up') do |form| %>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <%= form.text_field :name, class: 'form-control', id: 'name', placeholder: 'Your Name', required: true %>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <%= form.email_field :email, class: 'form-control', id: 'email', placeholder: 'Your Email', required: true %>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <%= form.text_field :subject, class: 'form-control', id: 'subject', placeholder: 'Subject', required: true %>
+              </div>
+              <div class="form-group mt-3">
+                <%= form.text_area :message, class: 'form-control', rows: 5, placeholder: 'Message', required: true %>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center">
+                <%= form.submit 'Send Message', class: 'btn btn-primary' %>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->

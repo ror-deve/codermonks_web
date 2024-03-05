@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodermonksWeb</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag 'only_logo' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="page-wrapper">
+        <!-- Header -->
+        <%#= render "shared/header" %>
+        <div class="content-wrapper">
+          <div class="content">        
+            <turbo-frame id="flash">
+              <%= render 'shared/flash_messages' %>
+            </turbo-frame>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <%= render "shared/footer" %>
+  </body>
+</html>
